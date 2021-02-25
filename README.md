@@ -1,8 +1,8 @@
 # Java-dock
 
-環境 : Java11
+環境 : Java SE11
 
-ocjp8 to 11アップグレード試験勉強用
+ocjp Gold SE8 to SE11アップグレード試験勉強用
 
 2021年2月現在の最新はjava se15
 
