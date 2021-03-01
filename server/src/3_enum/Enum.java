@@ -14,3 +14,11 @@ enum Card {
         return a;
     }
 }
+
+public class Enum {
+    public static void main(String[] args){
+
+        Card card = Card.SPADES;
+        System.out.println(card);
+    }
+}
