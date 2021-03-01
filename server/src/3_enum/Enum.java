@@ -20,5 +20,14 @@ public class Enum {
 
         Card card = Card.SPADES;
         System.out.println(card);
+        System.out.println(card.getA());
+        System.out.println(card.ordinal());
+        System.out.println(card.HEARTS.getA());
+
+        for(Card obj : Card.values()){
+            System.out.print(obj + " ");
+        }
+
+        System.out.println();
     }
 }
