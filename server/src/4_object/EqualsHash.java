@@ -11,4 +11,8 @@ class Foo{
         }
     }
 
+    public int hashCode(){
+        return num * 5;
+    }
+
 }
