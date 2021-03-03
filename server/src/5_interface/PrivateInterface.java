@@ -6,4 +6,16 @@ interface Foo {
     private static void p2(){
         System.out.println("Foo : p2()");
     }
+
+    static void methodA(){
+        System.out.println("Foo : methodA()");
+        p1();
+        //p2(); コンパイルエラー
+    }
+
+    default void methodB(){
+        System.out.println("Foo : methodB()");
+        p1();
+        p2();
+    }
 }
