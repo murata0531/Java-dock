@@ -24,3 +24,18 @@ class MyClass implements MyInter1, MyInter2 {
         return val1 + val2;
     }
 }
+
+public class ImplementsInterface {
+    public static void main(String[] args){
+
+        MyClass obj = new MyClass();
+
+        System.out.println("methodA() : " + obj.methodA());
+        System.out.println("methodC() : " + obj.methodC(10,20));
+
+        obj.methodB();
+        MyInter2.methodD();
+        // obj.methodD();   コンパイルエラー
+
+    }
+}
