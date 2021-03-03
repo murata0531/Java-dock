@@ -14,12 +14,12 @@ interface MyInter2 {
 
 class MyClass implements MyInter1, MyInter2 {
 
-    @override
+    @Override
     public double methodA(int num){
         return num * 0.3;
     }
 
-    @override
+    @Override
     public int methodC(int val1, int val2){
         return val1 + val2;
     }
@@ -30,7 +30,7 @@ public class ImplementsInterface {
 
         MyClass obj = new MyClass();
 
-        System.out.println("methodA() : " + obj.methodA());
+        System.out.println("methodA() : " + obj.methodA(10));
         System.out.println("methodC() : " + obj.methodC(10,20));
 
         obj.methodB();
