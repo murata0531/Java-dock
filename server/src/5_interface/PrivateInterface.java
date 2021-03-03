@@ -19,3 +19,14 @@ interface Foo {
         p2();
     }
 }
+
+class FooImp implements Foo {
+
+}
+
+public class PrivateInterface {
+    public static void main(String[] args){
+        Foo.methodA();
+        new FooImp().methodB();
+    }
+}
