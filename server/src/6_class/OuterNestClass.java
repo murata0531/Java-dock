@@ -29,16 +29,17 @@ class Outer {
             // System.out.println("B#method1()#instance val1 : " + val1);
 
             System.out.println("B#method1()#static val2 : " + val2);
-
-            //static method
-            static void method2(){
-
-                //this is Compile error because static classes cannot access outer instance variables
-                // System.out.println("B#method2()#instance val1 : " + val1);
-                System.out.println("B#method2()#static val2 : " + val2);
-
-            }
         }
+        
+        //static method
+        static void method2(){
+
+            //this is Compile error because static classes cannot access outer instance variables
+            // System.out.println("B#method2()#instance val1 : " + val1);
+            System.out.println("B#method2()#static val2 : " + val2);
+
+        }
+        
     }
 }
 
