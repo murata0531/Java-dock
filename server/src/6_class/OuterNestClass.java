@@ -41,3 +41,18 @@ class Outer {
         }
     }
 }
+
+class OuterNestClass {
+    public static void main(String[] args){
+
+        //non-static class instantiation
+        Outer.A a = new Outer().new A();
+
+        //static class instantiation
+        Outer.B b = new Outer.B();
+
+        a.method1();
+        b.method2();
+
+    }
+}
