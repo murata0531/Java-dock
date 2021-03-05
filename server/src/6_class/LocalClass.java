@@ -26,3 +26,10 @@ class Outer {
         new A().method();
     }
 }
+
+public class LocalClass {
+    public static void main(String[] args){
+        Outer o = new Outer();
+        o.methodOuter(3,4);
+    }
+}
