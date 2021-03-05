@@ -1,26 +1,22 @@
-public class MethodNest2 {
+class Outer {
 
-    //non-static inner class
+    private int num = 100;
+
+    //non-static class
     class A {
-        void methodA(){
-            System.out.println("methodA()");
-        }        
+
+        public int num = 200;
+
+        void method(int num) {
+
+            num + = 1;
+            this.num += 1;
+            Outer.this.num += 1;
+
+            System.out.println("num : " + num);
+            System.out.println("this.num : " + this.num);
+            System.out.println("Outer.this.num : " + Outer.this.num);
+
+        }
     }
-
-    //static class
-    static class B {
-        static void methodB(){
-            System.out.println("methodB()");
-        }    
-    }
-
-    public static void main(String[] args){
-
-        new MethodNest2().new A().methodA();
-        new MethodNest2.B().methodB();
-        new B().methodB();
-        MethodNest2.B.methodB();
-        B.methodB();
-    }
-
 }
