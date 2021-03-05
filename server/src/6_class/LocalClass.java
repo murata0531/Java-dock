@@ -10,12 +10,12 @@ class Outer {
 
         class A {
             void method(){
-                System.out.println(a + "");
-                System.out.println(b + "");
-                System.out.println(c + "");
-                System.out.println(d + "");
-                System.out.println(e + "");
-                System.out.println(f + "");
+                System.out.print(a + "");
+                System.out.print(b + "");
+                System.out.print(c + "");
+                System.out.print(d + "");
+                System.out.print(e + "");
+                System.out.println(f);
 
                 //this is compile error because  these variables are effectively final
                 // d = 100;
