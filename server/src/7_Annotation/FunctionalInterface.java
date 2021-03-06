@@ -1,4 +1,4 @@
-@FunctionalInterface
+@java.lang.FunctionalInterface
 interface FuncInter<T> {
     void Foo(T t);
     String toString();
@@ -7,7 +7,7 @@ interface FuncInter<T> {
     default void Y(){};
 }
 
-@FunctionalInterface
+@java.lang.FunctionalInterface
 interface NotFuncInter<T> {
     boolean equals(Object obj);
 }
