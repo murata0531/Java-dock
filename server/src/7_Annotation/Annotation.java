@@ -5,8 +5,8 @@ class Parent {
 }
 
 class Child extends Parent {
-    @Override
-    void val(){
+    @java.lang.Override
+    void bal(){
         System.out.println("Child#bar");
     }
 }
