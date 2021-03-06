@@ -5,6 +5,7 @@ class Parent {
 }
 
 class Child extends Parent {
+    @Override
     void val(){
         System.out.println("Child#bar");
     }
