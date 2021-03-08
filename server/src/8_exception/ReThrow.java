@@ -4,6 +4,11 @@ class MyExceptionA extends Exception {
     }
 }
 
+class MyExceptionB extends Exception {
+    MyExceptionB(){
+        super("MyExceptionB");
+    }
+}
 public class ReThrow {
     public static void main(String[] args){
 
