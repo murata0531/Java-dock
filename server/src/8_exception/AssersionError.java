@@ -16,3 +16,5 @@ public class AssersionError {
         System.out.println(obj.method(-1));
     }
 }
+
+// need to run with "-ea" option
