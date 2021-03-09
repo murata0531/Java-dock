@@ -14,7 +14,7 @@ class MyResource implements AutoCloseable {
     }
     public void close() throws SQLException {
         System.out.println("close() : " + msg);
-        throw new SQLException(" close() ERROR : " msg);
+        throw new SQLException(" close() ERROR : " +  msg);
 
     }
 }
