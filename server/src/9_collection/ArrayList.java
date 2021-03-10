@@ -14,6 +14,9 @@ public class ArrayList {
         list.add(i3);
         list.add(1,5);
 
+        // NG
+        // list.add("abc");
+
         System.out.println("size : " + list.size());
 
         for(int i = 0; i < list.size(); i++){
