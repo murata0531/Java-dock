@@ -16,7 +16,7 @@ class Foo {
     }
 
     public boolean equals(Object obj){
-        this.hashCode() == obj.hashCode();
+        return this.hashCode() == obj.hashCode();
     }
 }
 
