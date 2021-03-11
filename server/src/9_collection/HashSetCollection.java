@@ -1,4 +1,4 @@
-import java.util.HshSet;
+import java.util.HashSet;
 
 public class HashSetCollection {
     public static void main(String[] args){
@@ -17,7 +17,7 @@ public class HashSetCollection {
         }
 
         System.out.println();
-        
+
         }
     }
 }
