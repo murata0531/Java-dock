@@ -1,6 +1,6 @@
-import java,util.*;
+import java.util.*;
 
-public class Iterator {
+public class IteratorInterface {
     public static void main(String[] args){
 
         TreeSet<String> set = new TreeSet<String>();
@@ -12,7 +12,7 @@ public class Iterator {
         Iterator<String> itr = set.iterator();
 
         while(itr.hasNext()){
-            System.out.println(itr.naxt());
+            System.out.println(itr.next());
         }
     }
 }
