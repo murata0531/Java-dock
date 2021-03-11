@@ -23,17 +23,24 @@ class Foo {
 public class OverrideHashSet {
     public static void main(String[] args){
 
-        String[] ary = {"CCCC","AAA","BBB"};
-        HashSet<String> hashSet = new HashSet<String>();
-        hashSet.add(ary[0]);
-        hashSet.add(ary[1]);
-        hashSet.add(ary[2]);
-        hashSet.add(ary[0]);
+        HashSet<Foo> set = new HashSet<Foo>();
+        
+        Foo f1 = new Foo("BBB");
+        set.add(f1);
 
-        System.out.println("HashSet size : " + hashSet.size());
+        Foo f2 = new Foo("AAA");
+        set.add(f2);
 
-        for(String s : hashSet){{
-            System.out.print(s + " ");
+        Foo f3 = new Foo("CCC");
+        set.add(f3);
+
+        Foo f4 = new Foo("AAA");
+        set.add(f4);
+
+        System.out.println("size : " + set.size());
+
+        for(Foo f : set){{
+            System.out.print(f);
         }
 
         System.out.println();
