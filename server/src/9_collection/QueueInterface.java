@@ -1,9 +1,9 @@
 import java.util.*;
 
-public class QueuInterface {
+public class QueueInterface {
     public static void main(String[] args){
 
-        Queue<String> queue = new ArrayDequeue<String>();
+        Queue<String> queue = new ArrayDeque<String>();
 
         queue.add("1");
         queue.add("2");
