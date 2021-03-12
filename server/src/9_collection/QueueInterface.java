@@ -14,5 +14,14 @@ public class QueueInterface {
         System.out.println(queue);
         System.out.println("remove : " + queue.remove());
         System.out.println(queue);
+
+        for(String s : queue){
+            queue.poll();
+        }
+
+        System.out.println(queue.peek());
+        // throws exception
+        // System.out.println("element : " + queue.element());
+
     }
 }
