@@ -3,6 +3,7 @@ import java.util.*;
 public class QueueInterface {
     public static void main(String[] args){
 
+        //First In First Out
         Queue<String> queue = new ArrayDeque<String>();
 
         queue.add("1");
