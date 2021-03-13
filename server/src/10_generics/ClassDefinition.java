@@ -26,7 +26,7 @@ public class ClassDefinition {
         Gen<Integer> g2 = new Gen<>(1);
         System.out.println(g2.getVar1());
         g2.setVar1(2);
-        System.out.println(g2.getVar1())
+        System.out.println(g2.getVar1());
 
     }
 }
