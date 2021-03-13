@@ -10,7 +10,7 @@ class Foo implements MyIn<String>{
 public class InterfaceDeclaration {
     public static void main(String[] args){
 
-        new Foo.method("ABC");
+        new Foo().method("ABC");
 
         new MyIn<Integer>() {
             public void method(Integer i){
