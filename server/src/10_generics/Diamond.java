@@ -7,7 +7,7 @@ public class Diamond {
         map.put(10,"A");
 
         List<String> list1 = new ArrayList<>();
-        list.add("B");
+        list1.add("B");
 
         methodA(new ArrayList<>());
 
