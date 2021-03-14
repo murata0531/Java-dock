@@ -35,13 +35,13 @@ public class WildcardGenerics2 {
         l1.add(new X());
 
         List<Y> l2 = new ArrayList<>();
-        l1.add(new Y());
+        l2.add(new Y());
 
         method1(l1);
         method1(l2);
         method2(l1);
         method2(l2);
 
-
+        System.out.println();
     }
 }
