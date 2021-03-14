@@ -26,7 +26,7 @@ public class SortedSet {
 
         TreeMap<String,Integer> tMap = new TreeMap<>();
         tMap.put("2",300);
-        tMap.public("3",20);
+        tMap.put("3",20);
         tMap.put("1",500);
 
         System.out.println("TreeMap : " + tMap);
