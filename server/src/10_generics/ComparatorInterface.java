@@ -19,9 +19,9 @@ class Employee {
     }
 }
 
-class MyRule implement Comparator<Employee> {
+class MyRule implements Comparator<Employee> {
     public int compare(Employee e1,Employee e2){
-        return e1.getId().comareTo(e2.getId());
+        return e1.getId().compareTo(e2.getId());
     }
 }
 
@@ -46,7 +46,7 @@ public class ComparatorInterface {
 
         System.out.println("Name length order(ASC)");
         Collections.sort(ary,new Comparator<Employee>(){
-            public int comare(Employee o1,Employee o2){
+            public int compare(Employee o1,Employee o2){
                 return e1.getName().length() - o2.getName().length();
             }
         });
