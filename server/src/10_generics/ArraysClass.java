@@ -1,3 +1,5 @@
+import java.util.*;
+
 public class ArraysClass {
     public static void main(String[] args){
 
@@ -9,7 +11,7 @@ public class ArraysClass {
 
         print(ary1);
 
-        Object[] Ary2 = {"aa",10};
+        Object[] ary2 = {"aa",10};
 
         //class cast exception
         // Arrays.sort(ary2);
@@ -17,8 +19,8 @@ public class ArraysClass {
     }
 
     public static void print(int[] ary){
-        for(int[] num : ary){
-            System.out.print("num" + " ");
+        for(int num : ary){
+            System.out.print(num + " ");
         }
 
         System.out.println();
