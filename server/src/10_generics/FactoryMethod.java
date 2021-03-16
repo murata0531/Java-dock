@@ -11,7 +11,7 @@ public class FactoryMethod {
         // Set<Integer> set = Set.of(1,2,1);
         System.out.println("set : " + set);
 
-        Map<Integer,String> map = Map.of(1,"A",2."B",3,"C");
+        Map<Integer,String> map = Map.of(1,"A",2,"B",3,"C");
         System.out.println("map : " + map);
 
     }
