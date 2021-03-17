@@ -1,3 +1,5 @@
+import java.util.function.*;
+
 class MyFunc implements Function<String,String> {
     public String apply(String str){
         return "Hello " + str;
