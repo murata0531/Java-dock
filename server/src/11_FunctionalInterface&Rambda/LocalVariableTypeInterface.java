@@ -1,10 +1,10 @@
 import java.util.ArrayList;
 
-public class Foo {
+class Foo {
 
 }
 
-public class Test {
+class Test {
 
     //"var" cannot be used for member variables
     // var a = 100;
