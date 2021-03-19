@@ -1,4 +1,5 @@
 import java.util.*;
+import java.util.function.*;
 
 public class ReplaceAll {
     public static void main(String[] args){
