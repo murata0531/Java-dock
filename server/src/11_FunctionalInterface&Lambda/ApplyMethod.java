@@ -15,9 +15,7 @@ public class ApplyMethod {
 
         // Lambda(No Omit)
         Function<String,String> f2 = (String str) -> {
-            public String apply(String str){
-                return "Hello" + str;
-            }
+            return "Hello" + str;
         };
         String str2 = f2.apply("YAMADA TARO");
         System.out.println("Lambda(No Omit) : " + str2);
@@ -25,6 +23,6 @@ public class ApplyMethod {
         // Lambda(Omit)
         Function<String,String> f3 = str -> "Hello" + str;
         String str3 = f3.apply("YAMADA");
-        System.out.println("Lambda(Omit) : " + str2);
+        System.out.println("Lambda(Omit) : " + str3);
     }
 }
