@@ -24,7 +24,7 @@ public class SubstantialFinal {
             // e = 100;
 
             return "Hello " + str;
-        }
+        };
 
         System.out.println(f1.apply("YAMADA"));
     }
