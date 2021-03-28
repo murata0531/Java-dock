@@ -6,30 +6,15 @@ public class InstanceMethodReference {
 
         List<Integer> list = Arrays.asList(3,1,2);
 
-        //anonymous class
-        Consumer<List<Integer>> con1 = new Consumer<List<Integer>>(){
-            public void accept(List<Integer> list){
-                Collections.sort(list);
-            }
-        };
+        //for
+        for(int a : list){
+            System.out.println(a);
+        }
 
-        //lambda
-        Consumer<List<Integer>> con2 = lamdaList -> Collections.sort(lamdaList);
+        //foreach lambda
+        list.forEach(a -> System.out.println(a));
 
-        //static method reference
-        Consumer<List<Integer>> con3 = Collections::sort;
-
-        con3.accept(list);
-        System.out.println(list);
-
-        //lambda
-        Comparator<Integer> comp = (x,y) -> Integer.compare(x,y);
-
-        //static method reference
-        Comparator<Integer> comp2 = Integer::compare;
-
-        System.out.println(comp.compare(1,2));
-        System.out.println(comp2.compare(2,1)); 
-
+        // instance method reference
+        list,foreach(System.out::println);
     }
 }
