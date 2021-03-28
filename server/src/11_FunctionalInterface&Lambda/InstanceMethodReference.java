@@ -15,6 +15,14 @@ public class InstanceMethodReference {
         list.forEach(a -> System.out.println(a));
 
         // instance method reference
-        list,foreach(System.out::println);
+        list.forEach(System.out::println);
+
+        // lambda
+        UnaryOperator<String> obj = s -> s.toUpperCase();
+
+        // instance method reference
+        UnaryOperator<String> obj2 = String::toUpperCase;
+
+        System.out.println(obj2.apply("YAMADA"));
     }
 }
