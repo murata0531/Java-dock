@@ -21,5 +21,15 @@ public class StaticMethodReference {
 
         con3.accept(list);
         System.out.println(list);
+
+        //lambda
+        Comparator<Integer> comp = (x,y) -> Integer.compare(x,y);
+
+        //static method reference
+        Comparator<Integer> comp2 = Integer::compare;
+
+        System.out.println(comp.compare(1,2));
+        System.out.println(comp2.compare(2,1)); 
+
     }
 }
