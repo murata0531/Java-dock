@@ -5,9 +5,9 @@ public class IntFunctionInterface {
     public static void main(String[] args){
 
         // lambda
-        IntFunction<String> l1 = Size -> new String[size];
+        IntFunction<String[]> l1 = size -> new String[size];
         //method reference
-        IntFunction<String> f1 = String[]::new;
+        IntFunction<String[]> f1 = String[]::new;
         String[] ans1 = f1.apply(5);
 
         //lambda
