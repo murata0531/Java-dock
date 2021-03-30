@@ -28,8 +28,8 @@ public class ConstructorReference {
         System.out.println(obj4.apply(set).size());
 
         // arrays
-        Function<Integer,Strins[]> obj5 = String[]::new;
-        System.out.println(obj5.apply().length(5));
+        Function<Integer,String[]> obj5 = String[]::new;
+        System.out.println(obj5.apply(5).length);
     }
 }
 
