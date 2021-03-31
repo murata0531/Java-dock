@@ -4,18 +4,12 @@ import java.util.function.*;
 public class AndThenCompose {
     public static void main(String[] args){
 
-        // lambda
-        ToIntFunction<String> l1 = s -> s.length();
-        //method reference
-        ToIntFunction<String> f1 = String::length;
-        int ans1 = f1.applyAsInt("Java");
+        Function<String,Character> f1 = s -> s.charAt(0);
+        Function<Character,Boolean> f2 = c -> Character.isUpperCase(c);
 
-        //lambda
-        IntToDoubleFunction f2 = i ->i * 1.10;
-        //NG : Becouse automatic conversion is not performed with the argument of the lambda expression
-        // IntToDoubleFunction f2 = (Integer i) -> { return i * 1.10; };
-
-        double ans2 = f2.applyAsDouble(1000);
+        //andThen
+        Function<Character,Boolean> f3 = f1.andThen(f2);
+        System.out.println(f3.apply("Java"));
 
     }
 }
