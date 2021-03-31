@@ -12,7 +12,7 @@ public class AndThenCompose {
         System.out.println(f3.apply("Java"));
 
         //compose
-        Function<String,Character> f4 = f2.compose(f1);
+        Function<String,Boolean> f4 = f2.compose(f1);
         System.out.println(f4.apply("Java"));
 
     }
