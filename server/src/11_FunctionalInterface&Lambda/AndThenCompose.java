@@ -8,7 +8,7 @@ public class AndThenCompose {
         Function<Character,Boolean> f2 = c -> Character.isUpperCase(c);
 
         //andThen
-        Function<Character,Boolean> f3 = f1.andThen(f2);
+        Function<String,Boolean> f3 = f1.andThen(f2);
         System.out.println(f3.apply("Java"));
 
         //compose
