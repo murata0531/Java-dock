@@ -11,5 +11,9 @@ public class AndThenCompose {
         Function<Character,Boolean> f3 = f1.andThen(f2);
         System.out.println(f3.apply("Java"));
 
+        //compose
+        Function<String,Character> f4 = f2.compose(f1);
+        System.out.println(f4.apply("Java"));
+
     }
 }
