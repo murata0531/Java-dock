@@ -10,9 +10,9 @@ public class OrAndNegegate {
         System.out.println(p3.test(5));
 
         LongPredicate p4 = p1.and(p2);
-        System.out.println(p3.test(15));
+        System.out.println(p4.test(15));
 
-        LongPredicate p5 = p1.negate(p2);
-        System.out.println(p3.test(15));
+        LongPredicate p5 = p4.negate();
+        System.out.println(p4.test(15));
     }
 }
