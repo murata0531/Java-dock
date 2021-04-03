@@ -13,6 +13,6 @@ public class OrAndNegegate {
         System.out.println(p4.test(15));
 
         LongPredicate p5 = p4.negate();
-        System.out.println(p4.test(15));
+        System.out.println(p5.test(15));
     }
 }
