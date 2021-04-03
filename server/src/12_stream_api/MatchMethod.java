@@ -11,6 +11,11 @@ public class MatchMethod {
 
         System.out.println(result1 + "\n" + result2 + "\n" + result3);
 
-        
+        Stream<String> stream1 = data1.stream();
+        boolean result4 = stream1.allMatch(s -> s.length() >= 5);
+
+        //throws IllegalStateException : 
+        //Because the end operation can only be called once on the stream object
+        // boolean result5 = stream1.anyMatch(s -> s.length() >= 5);
     }
 }
