@@ -1,5 +1,5 @@
 import java.util.*;
-import java.util.stream;
+import java.util.stream.*;
 
 public class MatchMethod {
     public static void main(String[] args){
