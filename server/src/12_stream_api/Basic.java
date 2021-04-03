@@ -4,7 +4,7 @@ public class Basic {
     public static void main(String[] args){
 
         //data source
-        List<String> list = Arrays.asList("BB","AA","CC");
+        List<String> list = Arrays.asList("bb","aa","cc");
 
         //up to now
         for(int i = 0; i < list.size(); i++){
@@ -20,5 +20,12 @@ public class Basic {
 
         System.out.println();
 
+        //data source
+        list = Arrays.asList("bb","aa","cc");
+
+        //Stream API
+        list.stream().sorted().map(s -> s.toUpperCase()).forEach(s -> System.out.print(s + " "));
+
+        System.out.println();
     }
 }
