@@ -4,17 +4,12 @@ import java.util.stream.*;
 public class Reduce {
     public static void main(String[] args){
 
-        long result1 = Stream.of("a","b","c").count();
-        System.out.println(result1);
+        Stream<Integer> stream = Stream.of(10,20,30);
 
-        Stream<String> stream1 = Stream.of("a","b","c");
-        stream1.forEach(System.out::print);
+        int result = stream.reduce(0,(a,b) -> a + b);
+        //ok
+        //int result = stream.reduce(0,Integer::sum);
 
-        System.out.println();
-
-        // This is compile error : Because stream interface does not inherit "iterable"
-        // for(String s : stream1){
-        //     System.out.print(s);
-        // }
+        System.out.println(result);
     }
 }
