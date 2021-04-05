@@ -17,5 +17,10 @@ public class Reduce {
         Stream<Integer> stream1 = Stream.of(10,20,30);
         Optional<Integer> result1 = stream1.reduce(operator);
         result1.ifPresent(System.out::println);
+
+        Stream<Integer> stream2 = Stream.empty();
+        Optional<Integer> result2 = stream2.reduce(operator);
+        System.out.println(result2);
+        result2.ifPresent(System.out::println);
     }
 }
