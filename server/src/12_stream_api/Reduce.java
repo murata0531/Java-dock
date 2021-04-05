@@ -1,4 +1,5 @@
 import java.util.*;
+import java.util.function.*;
 import java.util.stream.*;
 
 public class Reduce {
@@ -14,7 +15,7 @@ public class Reduce {
 
         BinaryOperator<Integer> operator = (a,b) -> a + b;
         Stream<Integer> stream1 = Stream.of(10,20,30);
-        Optional<Integer> result = stream1.reduce(operator);
-        result.ifPresent(System.out::println);
+        Optional<Integer> result1 = stream1.reduce(operator);
+        result1.ifPresent(System.out::println);
     }
 }
