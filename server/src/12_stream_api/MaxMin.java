@@ -20,5 +20,16 @@ public class MaxMin {
         //ok
         // System.out.println(result2.get());
 
+        //Minimum value
+        Optional<String> result3 = data.stream().min(Comparator.naturalOrder());
+        //Number of characters
+        Optional<String> result4 = data.stream().min((d1,d2) -> d1.length() - d2.length());
+
+        result3.ifPresent(System.out::println);
+        //ok
+        // System.out.println(result3.get());
+        result4.ifPresent(System.out::println);
+        //ok
+        // System.out.println(result4.get());
     }
 }
