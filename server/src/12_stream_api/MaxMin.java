@@ -6,7 +6,7 @@ public class MaxMin {
     public static void main(String[] args){
 
         //data source
-        List<String> data = Arrays.asList("aaa","bb","c")
+        List<String> data = Arrays.asList("aaa","bb","c");
 
         //Maximum value
         Optional<String> result1 = data.stream().max(Comparator.naturalOrder());
