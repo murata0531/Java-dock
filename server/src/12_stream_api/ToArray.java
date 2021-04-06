@@ -5,22 +5,14 @@ import java.util.stream.*;
 public class ToArray {
     public static void main(String[] args){
 
-        Stream<Integer> stream = Stream.of(10,20,30);
+       int[] array1 = IntStream.range(1,10).ToArray();
+       int[] array2 = IntStream.rangeClosed(1,10).ToArray();
+       Object[] array3 = Stream.of("a","b").ToArray();
+       String[] array4 = Stream.of("a","b").ToArray(String::new);
 
-        int result = stream.reduce(0,(a,b) -> a + b);
-        //ok
-        //int result = stream.reduce(0,Integer::sum);
-
-        System.out.println(result);
-
-        BinaryOperator<Integer> operator = (a,b) -> a + b;
-        Stream<Integer> stream1 = Stream.of(10,20,30);
-        Optional<Integer> result1 = stream1.reduce(operator);
-        result1.ifPresent(System.out::println);
-
-        Stream<Integer> stream2 = Stream.empty();
-        Optional<Integer> result2 = stream2.reduce(operator);
-        System.out.println(result2);
-        result2.ifPresent(System.out::println);
+        System.out.println("array1 : " + Arrays.toString(array1));
+        System.out.println("array2 : " + Arrays.toString(array2));
+        System.out.println("array3 : " + array3.getClass());
+        System.out.println("array4 : " + array4.getClass());
     }
 }
