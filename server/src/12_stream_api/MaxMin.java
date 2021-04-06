@@ -5,18 +5,20 @@ import java.util.stream.*;
 public class MaxMin {
     public static void main(String[] args){
 
-        Optional<Integer> op1 = Optional.of(10);
-        Optional<Integer> op2 = Optional.empty();
+        //data source
+        List<String> data = Arrays.asList("aaa","bb","c")
 
-        System.out.println("op1.get() : " + op1.get());
-        //Throws NoSuchElementException
-        // System.out.println("op2.get() : " + op2.get());
+        //Maximum value
+        Optional<String> result1 = data.stream().max(Comparator.naturalOrder());
+        //Number of characters
+        Optional<String> result2 = data.stream().max((d1,d2) -> d1.length() - d2.length());
 
-        System.out.println("op1.isPresent() : " + op1.isPresent());
-        System.out.println("op2.isPresent() : " + op2.isPresent());
-
-        System.out.println("op1.isEmpty() : " + op1.isEmpty());
-        System.out.println("op2.isEmpty() : " + op2.isEmpty());
+        result1.ifPresent(System.out::println);
+        //ok
+        // System.out.println(result1.get());
+        result2.ifPresent(System.out::println);
+        //ok
+        // System.out.println(result2.get());
 
     }
 }
