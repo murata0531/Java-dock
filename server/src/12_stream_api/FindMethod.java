@@ -20,5 +20,15 @@ public class FindMethod {
 
         Optional<String> result3 = stream.findFirst();
         result3.ifPresent(r -> System.out.println("result3 : " + r));
+
+        //data source
+        IntStream intStream = IntStream.of(10,20,30);
+
+        OptionalInt result4 = intStream.findFirst();
+
+        //compile error
+        // System.out.println("result4 : " + result4.get());
+        System.out.println("result4 : " + result4.getAsInt());
+
     }
 }
