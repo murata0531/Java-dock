@@ -5,30 +5,16 @@ import java.util.stream.*;
 public class OrXX {
     public static void main(String[] args){
 
-        //data source
-        List<String> data = Arrays.asList("c","a");
-        //findFirst()
-        Optional<String> result1 = data.stream().findFirst();
-        //findAny()
-        Optional<String> result2 = data.stream().findAny();
+        Stream<Double> stream = Steam.empty();
+        Optional<Double> result = stream.findFirst();
 
-        System.out.println("result1 : " + result1.get());
-        System.out.println("result2 : " + result2.get());
+        //orElse
+        System.out.println(result.orElse(0.0));
 
-        //empty data
-        Stream<String> stream = Stream.empty();
+        //orElseGet
+        System.out.println(result.orElseGet(() -> Math.random()));
 
-        Optional<String> result3 = stream.findFirst();
-        result3.ifPresent(r -> System.out.println("result3 : " + r));
-
-        //data source
-        IntStream intStream = IntStream.of(10,20,30);
-
-        OptionalInt result4 = intStream.findFirst();
-
-        //compile error
-        // System.out.println("result4 : " + result4.get());
-        System.out.println("result4 : " + result4.getAsInt());
-
+        //orElseThrow
+        System.out.println(result.orElseThrow(IllegalArgumentException::new));
     }
 }
