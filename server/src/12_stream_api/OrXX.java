@@ -5,7 +5,7 @@ import java.util.stream.*;
 public class OrXX {
     public static void main(String[] args){
 
-        Stream<Double> stream = Steam.empty();
+        Stream<Double> stream = Stream.empty();
         Optional<Double> result = stream.findFirst();
 
         //orElse
