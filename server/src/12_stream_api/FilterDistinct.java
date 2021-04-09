@@ -24,7 +24,7 @@ public class FilterDistinct {
         System.out.println();
 
         //data source
-        Stream<String> stream3 = Stream.of("ami","ami","akko","yuki",10);
+        Stream<String> stream3 = Stream.of("ami","ami","akko","yuki");
 
         //distinct()
         stream3.distinct()
