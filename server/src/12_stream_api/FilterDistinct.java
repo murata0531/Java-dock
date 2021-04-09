@@ -6,10 +6,10 @@ public class FilterDistinct {
     public static void main(String[] args){
 
         //data source
-        Stream<String> stream1 = Stream.of("ami","yuki""akko");
+        Stream<String> stream1 = Stream.of("ami","yuki","akko");
 
         //filter()
-        stream1.filter(s -> s.startWith("a"))
+        stream1.filter(s -> s.startsWith("a"))
                 .forEach(x -> System.out.print(x + " "));
         
         System.out.println();
