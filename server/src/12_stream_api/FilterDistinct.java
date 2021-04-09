@@ -13,5 +13,14 @@ public class FilterDistinct {
                 .forEach(x -> System.out.print(x + " "));
         
         System.out.println();
+
+        //data source
+        Stream<String> stream2 = Stream.of("ami","","akko");
+
+        //filter() empty()
+        stream2.filter(Predicate.not(s -> s.isEmpty()))
+                .forEach(x -> System.out.print(x + " "));
+        
+        System.out.println();
     }
 }
