@@ -18,7 +18,7 @@ public class LimitSkip {
         System.out.println();
 
         //skip(100L) => limit(5L)
-        IntStream.iterate(1,10).skip(100L).limit(5L).forEach(x -> System.out.print(x + " "));
+        IntStream.iterate(1,n -> n + 1).skip(100L).limit(5L).forEach(x -> System.out.print(x + " "));
 
         System.out.println();
 
