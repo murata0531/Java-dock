@@ -14,5 +14,10 @@ public class LimitSkip {
         IntStream.rangeClosed(1,10).skip(5L).forEach(x -> System.out.print(x + " "));
 
         System.out.println();
+
+        //skip(100L) => limit(5L)
+        IntStream.iterate(1,10).skip(100L).limit(5L).forEach(x -> System.out.print(x + " "));
+
+        System.out.println();
     }
 }
