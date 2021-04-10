@@ -26,5 +26,7 @@ public class LimitSkip {
         Stream<String> stream = Stream.generate(() -> "Java");
         //limit(3L)
         stream.limit(3L).forEach(x -> System.out.print(x + " "));
+
+        System.out.println();
     }
 }
