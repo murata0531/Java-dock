@@ -18,5 +18,12 @@ public class MapMethod {
         stream2i.forEach(x -> System.out.print(x + " "));
 
         System.out.println();
+
+        //IntStream => IntStream
+        IntStream stream3a = IntStream.of(1,2,3);
+        IntStream stream3b = stream3a.map(n -> n * 10);
+        stream3b.forEach(x -> System.out.print(x + " "));
+
+        System.out.println();
     }
 }
