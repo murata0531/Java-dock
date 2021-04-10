@@ -11,5 +11,12 @@ public class MapMethod {
         stream1b.forEach(x -> System.out.print(x + " "));
 
         System.out.println();
+
+        // Stream<String> => Stream<Integer>
+        Stream<String> stream2s = Stream.of("yuki","akko","ami");
+        Stream<Integer> stream2i = stream2s.map(s -> s.length());
+        stream2i.forEach(x -> System.out.print(x + " "));
+
+        System.out.println();
     }
 }
