@@ -22,7 +22,7 @@ public class TypeConversion {
         Stream<String> stream4n = stream4o.map(n -> n + "n");
 
         //IntStream => Stream<String> :mapToObj()
-        IntStream stream5o = Stream.of(1,2,3);
+        IntStream stream5o = IntStream.of(1,2,3);
         Stream<String> stream5n = stream5o.mapToObj(n -> n + "n");
 
 
