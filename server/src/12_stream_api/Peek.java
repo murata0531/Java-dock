@@ -6,7 +6,7 @@ public class Peek {
     public static void main(String[] args){
 
         List<String> list = 
-            Stream.of("one","three", "two", "three","four");
+            Stream.of("one","three", "two", "three","four")
                   .filter(s -> s.length() > 3)
                   .peek(e -> System.out.println("After the filter : " + e))
                   .distinct()
