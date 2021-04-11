@@ -19,7 +19,7 @@ public class TypeConversion {
 
         //Stream<Integer> => Stream<String> :map()
         Stream<Integer> stream4o = Stream.of(1,2,3);
-        Stream<String> stream4n = stream4o.mapToInt(n -> n + "n");
+        Stream<String> stream4n = stream4o.map(n -> n + "n");
 
 
     }
