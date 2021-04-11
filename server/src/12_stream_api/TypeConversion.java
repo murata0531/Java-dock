@@ -25,6 +25,9 @@ public class TypeConversion {
         IntStream stream5o = IntStream.of(1,2,3);
         Stream<String> stream5n = stream5o.mapToObj(n -> n + "n");
 
+        //IntStream => Stream<Integer> :boxed()
+        IntStream stream6o = IntStream.of(1,2,3);
+        Stream<Integer> stream6n = stream6o.boxed();
 
     }
 }
