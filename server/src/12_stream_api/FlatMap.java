@@ -18,7 +18,14 @@ public class FlatMap {
                 .forEach(l -> {
                     l.forEach(x -> System.out.print(x + " "));
                 });
-                
+
+        System.out.println();
+
+        //flatMap()
+        dataList.stream()
+                .flatMap(data -> data.stream())
+                .forEach(x -> System.out.print(x + " "));
+
         System.out.println();
     }
 }
