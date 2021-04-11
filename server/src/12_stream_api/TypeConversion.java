@@ -13,5 +13,9 @@ public class TypeConversion {
         Stream<String> stream2o = Stream.of("yuki","akko","ami");
         IntStream stream2n = stream2o.mapToInt(s -> s.length());
 
+        //Stream<Integer> => IntStream :mapToInt()
+        Stream<Integer> stream3o = Stream.of(1,2,3);
+        IntStream stream3n = stream3o.mapToInt(n -> n * 10);
+
     }
 }
