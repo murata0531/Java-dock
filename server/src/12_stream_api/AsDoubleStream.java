@@ -12,7 +12,7 @@ public class AsDoubleStream {
 
         //IntStream<String> => DoubleStream : asDoubleStream()
         IntStream stream2i = IntStream.of(2,3,5);
-        DoubleStream stream2d = stream1i.asToDoubleStream();
+        DoubleStream stream2d = stream2i.asDoubleStream();
         System.out.println(stream2d.average().getAsDouble());
 
     }
