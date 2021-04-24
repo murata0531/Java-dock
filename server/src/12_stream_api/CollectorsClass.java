@@ -19,7 +19,7 @@ public class CollectorsClass {
 
         //SummingInt()
         Stream<String> stream3 = Stream.of("ami","akko","yuki");
-        Integer result3 = stream3.collect(Collectors.SummingInt(t -> t.length()));
+        Integer result3 = stream3.collect(Collectors.summingInt(t -> t.length()));
 
         System.out.println(result3);
 
