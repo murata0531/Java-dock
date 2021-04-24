@@ -2,7 +2,7 @@ import java.util.*;
 import java.util.function.*;
 import java.util.stream.*;
 
-public class Collectors {
+public class CollectorsClass {
     public static void main(String[] args){
 
         //collect()
@@ -13,7 +13,7 @@ public class Collectors {
 
         //joining()
         Stream<String> stream2 = Stream.of("ami","akko","yuki");
-        List<String> result2 = stream2.collect(Collectors.joining("|"));
+        String result2 = stream2.collect(Collectors.joining("|"));
 
         System.out.println(result2);
 
