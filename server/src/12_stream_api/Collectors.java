@@ -11,7 +11,12 @@ public class Collectors {
 
         System.out.println(result1);
 
-        
+        //joining()
+        Stream<String> stream2 = Stream.of("ami","akko","yuki");
+        List<String> result2 = stream2.collect(Collectors.joining("|"));
+
+        System.out.println(result2);
+
 
     }
 }
