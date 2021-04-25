@@ -25,7 +25,7 @@ public class CollectorsClass {
 
         //averagingInt()
         Stream<String> stream4 = Stream.of("ami","akko","yuki");
-        Double result4 = stream3.collect(Collectors.averagingInt(t -> t.length()));
+        Double result4 = stream4.collect(Collectors.averagingInt(t -> t.length()));
 
         System.out.println(result4);
 
