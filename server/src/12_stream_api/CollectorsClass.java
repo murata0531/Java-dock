@@ -17,11 +17,17 @@ public class CollectorsClass {
 
         System.out.println(result2);
 
-        //SummingInt()
+        //summingInt()
         Stream<String> stream3 = Stream.of("ami","akko","yuki");
         Integer result3 = stream3.collect(Collectors.summingInt(t -> t.length()));
 
         System.out.println(result3);
+
+        //averagingInt()
+        Stream<String> stream4 = Stream.of("ami","akko","yuki");
+        Double result4 = stream3.collect(Collectors.averagingInt(t -> t.length()));
+
+        System.out.println(result4);
 
     }
 }
