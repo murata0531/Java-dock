@@ -16,5 +16,9 @@ public class ToMap {
 
         System.out.println(map2);
 
+        Stream<String> stream3 = Stream.of("ami","akko","yuki");
+        Map<Integer,String> map3 = stream1.collect(Collectors.toMap(String::length,s -> s,(s1,s2) -> s1 + " : " + s2);
+
+        System.out.println(map3);
     }
 }
