@@ -21,5 +21,11 @@ public class ToMap {
 
         System.out.println(map3);
         System.out.println(map3.getClass());
+
+        Stream<String> stream4 = Stream.of("ami","akko","yuki");
+        Map<Integer,String> map4 = stream4.collect(Collectors.toMap(String::length,s -> s,(s1,s2) -> s1 + " : " + s2,TreeMap::new));
+
+        System.out.println(map4);
+        System.out.println(map4.getClass());
     }
 }
