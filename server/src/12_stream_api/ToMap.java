@@ -20,5 +20,6 @@ public class ToMap {
         Map<Integer,String> map3 = stream3.collect(Collectors.toMap(String::length,s -> s,(s1,s2) -> s1 + " : " + s2));
 
         System.out.println(map3);
+        System.out.println(map3.getClass());
     }
 }
