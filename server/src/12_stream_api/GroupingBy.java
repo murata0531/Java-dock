@@ -19,6 +19,12 @@ public class GroupingBy {
         Map<String,String> map3 = stream3.collect(Collectors.groupingBy(s -> s.substring(0,1),Collectors.joining()));
 
         System.out.println(map3);
+        System.out.println(map3.getClass());
 
+        Stream<String> stream4 = Stream.of("belle","akko","ami","bbb","nao");
+        Map<String,String> map4 = stream4.collect(Collectors.groupingBy(s -> s.substring(0,1),TreeMap::new, Collectors.joining()));
+
+        System.out.println(map4);
+        System.out.println(map4.getClass());
     }
 }
