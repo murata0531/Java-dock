@@ -16,7 +16,7 @@ public class GroupingBy {
         System.out.println(map2);
 
         Stream<String> stream3 = Stream.of("belle","akko","ami","bbb","nao");
-        Map<String,String> map3 = stream2.collect(Collectors.groupingBy(s -> s.substring(0,1),Collectors.joining()));
+        Map<String,String> map3 = stream3.collect(Collectors.groupingBy(s -> s.substring(0,1),Collectors.joining()));
 
         System.out.println(map3);
 
