@@ -14,5 +14,11 @@ public class GroupingBy {
         Map<String,Set<String>> map2 = stream2.collect(Collectors.groupingBy(s -> s.substring(0,1),Collectors.toSet()));
 
         System.out.println(map2);
+
+        Stream<String> stream3 = Stream.of("belle","akko","ami","bbb","nao");
+        Map<String,String> map3 = stream2.collect(Collectors.groupingBy(s -> s.substring(0,1),Collectors.joining()));
+
+        System.out.println(map3);
+
     }
 }
