@@ -27,5 +27,6 @@ public class ToMap {
 
         System.out.println(map4);
         System.out.println(map4.getClass());
+        
     }
 }
