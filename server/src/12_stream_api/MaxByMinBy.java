@@ -18,5 +18,8 @@ public class MaxByMinBy {
                                                         Collectors.maxBy(Comparator.naturalOrder())
                                                     )
                                                 );
+
+        System.out.println(result2);
+
     }
 }
