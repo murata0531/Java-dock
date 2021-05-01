@@ -7,12 +7,7 @@ public class MaxByMinBy {
 
         //map()
         Stream<String> stream1 = Stream.of("ami","akko","yuki");
-        String result1 = stream1.map(s -> s.toUpperCase()).collect(Collectors.joining(":"));
-        System.out.println(result1);
-
-        //mapping()
-        Stream<String> stream2 = Stream.of("ami","akko","yuki");
-        String result2 = stream2.collect(Collectors.mapping(s -> s.toUpperCase(),Collectors.joining(":")));
-        System.out.println(result2);
+        Optional<String> result1 = stream1.collect(Collectors.minBy(Comparator.naturalOrder()));
+        System.out.println(result1.get());
     }
 }
