@@ -8,5 +8,9 @@ public class PartitioningBy {
         Stream<Integer> stream1 = Stream.of(3,5,7,9);
         Map<Boolean,List<Integer>> map1 = stream1.collect(Collectors.partitioningBy(s -> s > 5));
         System.out.println(map1);
+
+        Stream<Integer> stream2 = Stream.of(3,5,7,9);
+        Map<Boolean,List<Integer>> map2 = stream1.collect(Collectors.partitioningBy(s -> s > 10));
+        System.out.println(map2);
     }
 }
