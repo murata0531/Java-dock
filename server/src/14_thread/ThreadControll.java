@@ -16,6 +16,15 @@ public class ThreadControll {
         });
 
         treadA.start();
+
+        try {
+            System.out.println("main : sleep");
+            thread.sleep(2000);
+            System.out.println("main : sleep end");
+            threadA.Interrupt();
+        }catch(InterruptedException e){
+            System.out.println("main : caught an interrupt");
+        }
     }
 }
 
