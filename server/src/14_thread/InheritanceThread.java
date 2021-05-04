@@ -13,16 +13,16 @@ public class InheritanceThread {
 
 class ThreadA extends Thread {
     public void run(){
-        for(int i = 0; i < 5; i++){
-            System.out.print("A : " + i + " ");
+        for(int i = 0; i < 3; i++){
+            System.out.println("A : " + i + " ");
         }
     }  
 }
 
 class ThreadB extends Thread {
     public void run(){
-        for(int i = 0; i < 5; i++){
-            System.out.print("B : " + i + " ");
+        for(int i = 0; i < 3; i++){
+            System.out.println("B : " + i + " ");
         }
     }  
 }
