@@ -1,7 +1,7 @@
 public class ThreadControll {
     public static void main(String[] args){
 
-        Tread treadA = new Thread(() -> {
+        Thread threadA = new Thread(() -> {
 
             System.out.println("threadA : sleep");
 
@@ -15,13 +15,13 @@ public class ThreadControll {
 
         });
 
-        treadA.start();
+        threadA.start();
 
         try {
             System.out.println("main : sleep");
-            thread.sleep(2000);
+            Thread.sleep(2000);
             System.out.println("main : sleep end");
-            threadA.Interrupt();
+            threadA.interrupt();
         }catch(InterruptedException e){
             System.out.println("main : caught an interrupt");
         }
