@@ -1,17 +1,21 @@
 public class ThreadControll {
     public static void main(String[] args){
 
-        //Anonymous class
-        new Thread(new Runnable(){
-            public void run(){
-                System.out.println("hello");
-            }
-        }).start();
+        Tread treadA = new Thread(() -> {
 
-        //Lambda
-        new Thread(() -> {
-            System.out.println("hello");
-        }).start();
+            System.out.println("threadA : sleep");
+
+            try{
+                Thread.sleep(5000);
+            }catch(InterruptedException e){
+                System.out.println("threadA : caught an interrupt");
+            }
+
+            System.out.println("threadA : resume");
+
+        });
+
+        treadA.start();
     }
 }
 
