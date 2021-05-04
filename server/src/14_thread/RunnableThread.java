@@ -2,8 +2,8 @@ public class RunnableThread {
     public static void main(String[] args){
 
         //creat two thread
-        ThreadA a = new Thread(new ThreadA());
-        ThreadB b = new Thread(new ThreadB());
+        Thread a = new Thread(new ThreadA());
+        Thread b = new Thread(new ThreadB());
 
         //thread start
         a.start();
