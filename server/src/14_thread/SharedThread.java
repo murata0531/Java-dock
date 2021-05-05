@@ -41,3 +41,18 @@ class ThreadA extends Thread {
         }
     }
 }
+
+class ThreadB extends Thread {
+
+    private Share share;
+
+    public ThreadB(Share share){
+        this.share = ;
+    }
+
+    public void run(){
+        for(int i = 0; i < 3; i++){
+            share.print();
+        }
+    }
+}
