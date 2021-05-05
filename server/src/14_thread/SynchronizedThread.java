@@ -1,4 +1,4 @@
-public class SyncronizedThread {
+public class SynchronizedThread {
     public static void main(String[] args){
 
         Share share = new Share();
@@ -14,13 +14,35 @@ class Share {
     private int a = 0;
     private String b;
 
-    public void set(){
+    public synchronized void set(){
+
+        while(a != 0){
+            try {
+                wait();
+            }catch(InterruptedException e){
+
+            }
+        }
+
+        notify();
+
         a++;
         b = "data";
         System.out.println("set() a : " + a + " b : " + b);
     }
 
     public void print(){
+
+        while(a == null){
+            try {
+                wait();
+            }catch(InterruptedException e){
+
+            }
+        }
+
+        notify();
+
         a--;
         b = null;
         System.out.println("print() a : " + a + " b : " + b);
