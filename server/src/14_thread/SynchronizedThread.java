@@ -31,9 +31,9 @@ class Share {
         System.out.println("set() a : " + a + " b : " + b);
     }
 
-    public void print(){
+    public synchronized void print(){
 
-        while(a == null){
+        while(b == null){
             try {
                 wait();
             }catch(InterruptedException e){
