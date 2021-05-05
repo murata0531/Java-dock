@@ -1,7 +1,7 @@
 public class SharedThread {
     public static void main(String[] args){
 
-        Share share = Share();
+        Share share = new Share();
         ThreadA threadA = new ThreadA(share);
         ThreadB threadB = new ThreadB(share);
         threadA.start();
