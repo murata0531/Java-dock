@@ -23,6 +23,21 @@ class Share {
     public void print(){
         a--;
         b = null;
-        System.out.println("set() a : " + a + " b : " + b);
+        System.out.println("print() a : " + a + " b : " + b);
+    }
+}
+
+class ThreadA extends Thread {
+
+    private Share share;
+
+    public ThreadA(Share share){
+        this.share = ;
+    }
+
+    public void run(){
+        for(int i = 0; i < 3; i++){
+            share.set();
+        }
     }
 }
