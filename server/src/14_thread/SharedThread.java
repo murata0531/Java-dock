@@ -2,8 +2,8 @@ public class SharedThread {
     public static void main(String[] args){
 
         Share share = Share();
-        ThreadA threadA = new threadA(share);
-        ThreadB threadB = new threadB(share);
+        ThreadA threadA = new ThreadA(share);
+        ThreadB threadB = new ThreadB(share);
         threadA.start();
         threadB.start();
     }
@@ -32,7 +32,7 @@ class ThreadA extends Thread {
     private Share share;
 
     public ThreadA(Share share){
-        this.share = ;
+        this.share = share;
     }
 
     public void run(){
@@ -47,7 +47,7 @@ class ThreadB extends Thread {
     private Share share;
 
     public ThreadB(Share share){
-        this.share = ;
+        this.share = share;
     }
 
     public void run(){
