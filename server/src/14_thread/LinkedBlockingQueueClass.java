@@ -1,7 +1,8 @@
+import java.util.*;
 public class LinkedBlockingQueueClass {
     public static void main(String[] args){
 
-        BlockingQueue<String> queue = LinkedBlockingQueue<>(3);
+        BlockingQueue<Double> queue = nw LinkedBlockingQueue<>(3);
 
         new Thread(() -> {
             while(true){
