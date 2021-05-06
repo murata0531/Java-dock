@@ -16,6 +16,9 @@ public class Submit {
             Future<Boolean> result2 = service.submit(() -> System.out.println("hello"),true);
             System.out.println(result2.get());
             
+            Future<Date> result3 = service,submit(() -> new Date());
+            System.out.println(result3.get());
+
         }catch(InterruptedException | ExecutionException e) {
             e.printStackTrace();
         } finally {
