@@ -4,28 +4,33 @@ import java.util.*;
 public class NewSingleThreadExecutor {
     public static void main(String[] args){
 
-        BlockingQueue<Double> queue = new LinkedBlockingQueue<>(3);
+        ExecutorService service = null;
 
-        new Thread(() -> {
-            while(true){
-                try {
-                    queue.offer(Math.random(),2,TimeUnit.SECONDS);
-                    System.out.println("offer() : " + queue.size());
-                }catch(InterruptedException e){
-                    e.printStackTrace();
-                }
-            }
-        }).start();
+        try {
 
-        new Thread(() -> {
-            while(true){
-                try {
-                    double pNum = queue.poll(2,TimeUnit.SECONDS);
-                    System.out.println("poll() : " + pNum);
-                }catch(InterruptedException e){
-                    e.printStackTrace();
-                }
+            service = Executors.newSingleThreadExecutor();
+
+            System.out.println("service.execute()");
+
+            for(int i = 0; i < 3; i++){
+                service.execute(() -> {
+                    System.out.print("thread task");
+                    for(int a = 0; a < 5; a++){
+                        try {
+                            Thread.sleep(500);
+                            System.out.print(" * ");
+                        }catch(InterruptedException e){
+                            e.printStackTrace();
+                        }
+                    }
+
+                    System.out.println();
+                });
             }
-        }).start();
+        } finally {
+            service.shutdown();
+            System.ou.println("ex.shutdown()");
+        }
+        
     }
 }
