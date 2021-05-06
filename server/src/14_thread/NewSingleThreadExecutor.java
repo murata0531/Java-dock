@@ -29,7 +29,7 @@ public class NewSingleThreadExecutor {
             }
         } finally {
             service.shutdown();
-            System.ou.println("ex.shutdown()");
+            System.out.println("ex.shutdown()");
         }
         
     }
