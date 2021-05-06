@@ -10,26 +10,18 @@ public class Submit {
 
             service = Executors.newSingleThreadExecutor();
 
-            System.out.println("service.execute()");
+            Future<?> result1 = service.submit(() -> System.out.println("hello"));
+            System.out.println(result1.get());
 
-            for(int i = 0; i < 3; i++){
-                service.execute(() -> {
-                    System.out.print("thread task");
-                    for(int a = 0; a < 5; a++){
-                        try {
-                            Thread.sleep(500);
-                            System.out.print(" * ");
-                        }catch(InterruptedException e){
-                            e.printStackTrace();
-                        }
-                    }
-
-                    System.out.println();
-                });
-            }
+            Future<Boolean> result2 = service.submit(() -> System.out.println("hello"),true);
+            System.out.println(result2.get());
+            
+        }catch(InterruptedException | ExecutionException e) {
+            e.printStackTrace();
         } finally {
-            service.shutdown();
-            System.out.println("ex.shutdown()");
+            if(service != null){
+                service.shutdown();
+            }
         }
         
     }
