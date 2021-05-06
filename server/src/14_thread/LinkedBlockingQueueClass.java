@@ -1,80 +1,28 @@
 public class LinkedBlockingQueueClass {
     public static void main(String[] args){
 
-        Share share = new Share();
-        ThreadA threadA = new ThreadA(share);
-        ThreadB threadB = new ThreadB(share);
-        threadA.start();
-        threadB.start();
-    }
-}
+        BlockingQueue<String> queue = LinkedBlockingQueue<>(3);
 
-class Share {
-
-    private int a = 0;
-    private String b;
-
-    public synchronized void set(){
-
-        while(a != 0){
-            try {
-                wait();
-            }catch(InterruptedException e){
-
+        new Thread(() -> {
+            while(true){
+                try {
+                    queue.offer(Math.random(),2,TimeUnit.SECONDS);
+                    System.out.println("offer() : " + queue.size());
+                }catch(InterruptedException e){
+                    e.printStackTrace();
+                }
             }
-        }
+        }).start();
 
-        notify();
-
-        a++;
-        b = "data";
-        System.out.println("set() a : " + a + " b : " + b);
-    }
-
-    public synchronized void print(){
-
-        while(b == null){
-            try {
-                wait();
-            }catch(InterruptedException e){
-
+        new Thread(() -> {
+            while(true){
+                try {
+                    double pNum = queue.poll(2,TimeUnit.SECONDS);
+                    System.out.println("poll() : " + pNum);
+                }catch(InterruptedException e){
+                    e.printStackTrace();
+                }
             }
-        }
-
-        notify();
-
-        a--;
-        b = null;
-        System.out.println("print() a : " + a + " b : " + b);
-    }
-}
-
-class ThreadA extends Thread {
-
-    private Share share;
-
-    public ThreadA(Share share){
-        this.share = share;
-    }
-
-    public void run(){
-        for(int i = 0; i < 3; i++){
-            share.set();
-        }
-    }
-}
-
-class ThreadB extends Thread {
-
-    private Share share;
-
-    public ThreadB(Share share){
-        this.share = share;
-    }
-
-    public void run(){
-        for(int i = 0; i < 3; i++){
-            share.print();
-        }
+        }).start();
     }
 }
