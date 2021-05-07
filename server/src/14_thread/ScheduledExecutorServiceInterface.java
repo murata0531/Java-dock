@@ -1,58 +1,22 @@
 public class ScheduledExecutorServiceInterface {
     public static void main(String[] args){
 
-        Share share = new Share();
-        ThreadA threadA = new ThreadA(share);
-        ThreadB threadB = new ThreadB(share);
-        threadA.start();
-        threadB.start();
-    }
-}
+        try {
+            service = Executors.newSingleThreadExecutor();
+            Runnable task1 = () -> System.out.println("task1");
+            Callable<Date> task2 = () -> new Date();
 
-class Share {
+            ScheduledFuture<?> result1 = service.schedule(task1,3,TimeUnit.SECONDS);
+            ScheduledFuture<?> result2 = service.schedule(task2,1,TimeUnit.SECONDS);
 
-    private int a = 0;
-    private String b;
+            System.out.println(result2.get());
 
-    public void set(){
-        a++;
-        b = "data";
-        System.out.println("set() a : " + a + " b : " + b);
-    }
-
-    public void print(){
-        a--;
-        b = null;
-        System.out.println("print() a : " + a + " b : " + b);
-    }
-}
-
-class ThreadA extends Thread {
-
-    private Share share;
-
-    public ThreadA(Share share){
-        this.share = share;
-    }
-
-    public void run(){
-        for(int i = 0; i < 3; i++){
-            share.set();
-        }
-    }
-}
-
-class ThreadB extends Thread {
-
-    private Share share;
-
-    public ThreadB(Share share){
-        this.share = share;
-    }
-
-    public void run(){
-        for(int i = 0; i < 3; i++){
-            share.print();
+        }catch(InterruptedException | ExecutionException e){
+            e.printStackTrace();
+        }finally {
+            if(service != null){
+                service.shutdown();
+            }
         }
     }
 }
