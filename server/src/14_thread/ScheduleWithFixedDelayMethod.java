@@ -1,22 +1,18 @@
 import java.util.concurrent.*;
-import java.util.*;
+import java.util.Date;
 
 public class ScheduleWithFixedDelayMethod {
-    public static void main(String[] args){
-
-        ExecutorService service = null;
-        try {
-            service = Executors.newSingleThreadScheduledExecutor();
-            Runnable task1 = () -> System.out.println(new Date());
-            service.ScheduleWithFixedDelay(task1,2,2,TimeUnit.SECONDS);
-            Thread.sleep(10000);
-
-        }catch(InterruptedException | ExecutionException e){
-            e.printStackTrace();
-        }finally {
-            if(service != null){
-                service.shutdown();
-            }
-        }
+  public static void main(String[] args) {
+    ScheduledExecutorService service = null;
+    try {
+      service = Executors.newSingleThreadScheduledExecutor();
+      Runnable task = () -> System.out.println(new Date());
+      service.scheduleWithFixedDelay(task, 2, 2, TimeUnit.SECONDS);
+      Thread.sleep(10000);
+    } catch(InterruptedException e) { 
+      e.printStackTrace(); 
+    } finally {
+      if(service != null) service.shutdown(); 
     }
+  }
 }
