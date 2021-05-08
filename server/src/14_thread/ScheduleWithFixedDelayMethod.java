@@ -4,7 +4,7 @@ import java.util.*;
 public class ScheduleWithFixedDelayMethod {
     public static void main(String[] args){
 
-        ScheduledExecutorService service = null;
+        ExecutorService service = null;
         try {
             service = Executors.newSingleThreadScheduledExecutor();
             Runnable task1 = () -> System.out.println(new Date());
