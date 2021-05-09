@@ -2,17 +2,31 @@ import java.util.concurrent.*;
 import java.util.Date;
 
 public class ThreadPool {
-  public static void main(String[] args) {
-    ScheduledExecutorService service = null;
-    try {
-      service = Executors.newSingleThreadScheduledExecutor();
-      Runnable task = () -> System.out.println(new Date());
-      service.scheduleWithFixedDelay(task, 2, 2, TimeUnit.SECONDS);
-      Thread.sleep(10000);
-    } catch(InterruptedException e) { 
-      e.printStackTrace(); 
-    } finally {
-      if(service != null) service.shutdown(); 
+    public static void main(String[] args) {
+
+       ExecutorService service = null;
+
+        try {
+            service = Executors.newCachedThreadPool();
+            //service = Executors.newFixedThreadPool(2);
+
+            Runnable task = () -> {
+                String name = Thread.currentThread().getName();
+                System.out.println(name + " : start");
+                try {
+                    Thread.sleep(3000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                System.out.println(name + " : end");
+            };
+
+            for(int i = 0; i < 5; i++){
+                service.execute(task);
+            }
+
+        } finally {
+            if(service != null) service.shutdown(); 
+        }
     }
-  }
 }
