@@ -10,19 +10,19 @@ class RLE {
 		int ansPos = 0;
 		int i, ct;
 		
-		if(command == "compress"){
+		if(com.equals("compress")){
             for (i = 1, ct = 1; i < s.length; i++){
                 if (s[i] == s[i-1]){
                     ct++;
                 }else{
-                    System.out.format("%c%d", s[i-1], ct);
+                    System.out.format("%d%c", ct, s[i-1]);
                     ct = 1;
                 }
             }
             if (s[i-1] == s[i-2])
-                System.out.format("%c%d\n", s[i-1], ct);
+                System.out.format("%d%c\n", ct, s[i-1]);
             else
-                System.out.format("%c%d\n", s[i-1], ct);
+                System.out.format("%d%c\n", ct, s[i-1]);
         }
 	}
 
