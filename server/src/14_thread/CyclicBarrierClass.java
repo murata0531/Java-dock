@@ -11,32 +11,19 @@ public class CyclicBarrierClass {
             System.out.println(Thread.currentThread().getName() + "end");
         } catch(BrokenBarrierException | InterruptedException e) {
             e.printStackTrace();
-         }
+        }
     }
 
     public static void main(String[] args) {
 
-       ExecutorService service = null;
+        ExecutorService service = null;
 
         try {
-            service = Executors.newCachedThreadPool();
-            //service = Executors.newFixedThreadPool(2);
-
-            Runnable task = () -> {
-                String name = Thread.currentThread().getName();
-                System.out.println(name + " : start");
-                try {
-                    Thread.sleep(3000);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
-                System.out.println(name + " : end");
-            };
-
-            for(int i = 0; i < 5; i++){
-                service.execute(task);
+            service = Executors.newFixedThreadPool(4);
+            CyclicBarrier barrier = new CyclicBarrier(2, () -> System.out.println("task "));
+            for(int i = 0; i < 4; i++){
+                service.execute(() -> new Main().exec(barrier));
             }
-
         } finally {
             if(service != null) service.shutdown(); 
         }
