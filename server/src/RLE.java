@@ -9,14 +9,20 @@ class RLE {
 		char s[] = scn.next().toCharArray();
 		int ansPos = 0;
 		int i, ct;
+        int minus = 0;
+        ArrayList<String> result = new ArrayList<>();
 		
-		if(com.equals("compress")){
+		if(command.equals("compress")){
             for (i = 1, ct = 1; i < s.length; i++){
                 if (s[i] == s[i-1]){
                     ct++;
+                    minus = 0;
                 }else{
+                    minus--;
+                    result.add(String.valueOf(ct));
+                    result.add(s[i - 1]);
                     System.out.format("%d%c", ct, s[i-1]);
-                    ct = 1;
+                    ct = 0;
                 }
             }
             if (s[i-1] == s[i-2])
