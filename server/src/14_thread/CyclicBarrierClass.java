@@ -22,7 +22,7 @@ public class CyclicBarrierClass {
             service = Executors.newFixedThreadPool(4);
             CyclicBarrier barrier = new CyclicBarrier(2, () -> System.out.println("task "));
             for(int i = 0; i < 4; i++){
-                service.execute(() -> new Main().exec(barrier));
+                service.execute(() -> new CyclicBarrierClass().exec(barrier));
             }
         } finally {
             if(service != null) service.shutdown(); 
