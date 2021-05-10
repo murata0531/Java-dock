@@ -19,8 +19,6 @@ class RLE {
                     minus = 0;
                 }else{
                     minus--;
-                    result.add(String.valueOf(ct));
-                    result.add(s[i - 1]);
                     System.out.format("%d%c", ct, s[i-1]);
                     ct = 0;
                 }
