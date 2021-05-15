@@ -1,18 +1,12 @@
 import java.util.stream.*;
 import java.util.*;
+import java.util.concurrent.*;
 
 public class ForkJoinPoolParallel {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
 
-        List<String> list = Arrays.asList("aaa", "bb", "c");
-        Stream<String> stream1 = list.parallelStream();
-        System.out.println("stream1 : " + stream1.isParallel());
+        System.out.println("commonPool : " + ForkJoinPool.commonPool().getParallelism());
 
-        Stream<String> stream2 = list.stream();
-        System.out.println("stream2 : " + stream2.isParallel());
-
-        Stream<String> stream3 = stream2.parallel();
-        System.out.println("stream3 : " + stream3.isParallel());
-
+        IntStream.range(0, 100).parallel().forEach(i -> System.out.println(Thread.currentThread().getName() + ": " + i));
     }
 }
