@@ -1,5 +1,29 @@
 import java.util.concurrent.*;
-import java.util.Date;
+import java.util.concurrent.atomic.*;
+
+class IntegerTest {
+
+    private Integer syncInteger;
+    private final AtomicInteger atomicInteger;
+
+    public IntegerTest() {
+        syncInteger = 0;
+        atomicInteger = new AtomicInteger(0);
+    }
+
+    synchronized public void addSyncInteger() {
+        syncInteger++;
+    }
+
+    public void addAtomicInteger() {
+        atomicInteger.getAndIncrement();
+    }
+
+    public void showData() {
+        System.out.println("syncInt   : " + syncInteger);
+        System.out.println("atomicInt : " + atomicInteger.get());
+    }
+}
 
 public class AtomicInt {
 
