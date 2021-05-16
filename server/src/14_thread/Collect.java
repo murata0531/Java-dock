@@ -4,18 +4,30 @@ import java.util.stream.*;
 public class Collect {
     public static void main(String[] args) {
 
-        Integer total = Arrays.asList(10, 20, 30, 40, 50)
-            .parallelStream()
-                .reduce(0,
-                    (sum, a) -> {
-                        System.out.println("sum:" + sum + " a:" + a);
-                        return sum += a;
-                    },
-                    (b, c) -> {
-                        System.out.println("b:" + b + " c:" + c);
-                        return b + c;
-                    });
+        List<String> data = Arrays.asList("orange", "banana", "lemon");
 
-        System.out.println("total : " + total);
+        List<String> list = 
+                data.parallelStream()
+                    .collect(() -> new CopyOnWriteArrayList<>(),
+                            (plist, s) -> plist.add(s.toUpperCase()),
+                            (alist, blist) -> alist.addAll(blist));
+
+        for(String s : list){
+            System.out.print(s + " ");
+        }
+    
+        System.out.println();
+
+        Set<String> set = 
+                data.parallelStream()
+                    .collect(CopyOnWriteArraySet::new,
+                            Set::add,
+                            Set::addAll);
+
+        for(String e : set){
+            System.out.print(e + " ");
+        }
+
+        System.out.println();
     }
 }
