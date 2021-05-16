@@ -4,9 +4,18 @@ import java.util.stream.*;
 public class Reduce {
     public static void main(String[] args) {
 
-        List<String> data = Arrays.asList("c", "a", "d", "b");
-        Optional<String> rerult1 = data.parallelStream().findFirst();
-        Optional<String> rerult2 = data.parallelStream().findAny();
-        System.out.println(rerult1.get() + " " + rerult2.get());
+        Integer total = Arrays.asList(10, 20, 30, 40, 50)
+            .parallelStream()
+                .reduce(0,
+                    (sum, a) -> {
+                        System.out.println("sum:" + sum + " a:" + a);
+                        return sum += a;
+                    },
+                    (b, c) -> {
+                        System.out.println("b:" + b + " c:" + c);
+                        return b + c;
+                    });
+
+        System.out.println("total : " + total);
     }
 }
